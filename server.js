@@ -3,6 +3,8 @@ const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
+const port = process.env.PORT || 3000;
+
 app.use(express.static('public'));
 
 io.on('connection', socket => {
@@ -20,4 +22,4 @@ io.on('connection', socket => {
     
 });
 
-server.listen(3000);
+server.listen(port);
