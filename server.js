@@ -2,8 +2,17 @@ const express = require('express');
 const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
+const { ExpressPeerServer } = require('peer');
 
-const port = process.env.PORT || 3000;
+const port = 3000;
+
+const peerServer = ExpressPeerServer(server, {
+  debug: true,
+  path: '/'
+});
+ 
+app.use('/peerjs', peerServer);
+
 
 app.use(express.static('public'));
 

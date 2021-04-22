@@ -1,8 +1,8 @@
 const socket = io('/');
 const videoContainer = document.getElementById('video');
 const myPeer = new Peer(undefined, {
-   host: '/',
-   port: process.env.PORT
+   host: 'peerjs-server.herokuapp.com',
+   secure:true
 });
 
 const peers = {};
