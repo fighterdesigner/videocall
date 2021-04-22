@@ -1,7 +1,7 @@
 const socket = io('/');
 const videoContainer = document.getElementById('video');
 const myPeer = new Peer(undefined, {
-   host: 'peerjs-server.herokuapp.com',
+   host: '/',
    secure:true
 });
 
